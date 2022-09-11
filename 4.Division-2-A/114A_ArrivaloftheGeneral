@@ -1,0 +1,78 @@
+#include <iostream>
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+
+    int n;
+    cin >> n;
+    int arr[n];
+    int s=101, b=0;
+    int sp=0, bp=0;
+    for(int i=0; i<n; i++)
+    {
+        cin >> arr[i];
+        if(arr[i] <= s)
+        {
+            s = arr[i];
+            sp = i+1;
+        }
+        if(arr[i] > b)
+        {
+            b =arr[i];
+            bp = i+1;
+        }
+    }
+    int ans = (bp - 1) + (n-sp);
+    if(bp > sp)
+        ans--;
+    cout << ans;
+
+
+
+
+
+
+
+    /*int n, smolp=0, bigp=0;
+    int smol=0, big=0;
+    int ans=0;
+    cin >> n;
+    int arr[n];
+    for(int i=0; i<n; i++)
+    {
+        cin >> arr[i];
+        if(arr[i] > big)
+        {
+            big = arr[i];
+            bigp = i+1;
+        }
+        if(arr[i] <= smol)
+        {
+            smol=arr[i];
+            smolp=i+1;
+        }
+
+    }
+    cout << smol << endl << big;
+
+    //int smol = *min_element(arr, arr+n);
+    //int big = *max_element(arr, arr+n);
+    for(int i=0; i<n; i++)
+    {
+        if(arr[i] == smol)
+            smolp = i+1;
+        if(arr[i] == big)
+            bigp = i+1;
+    }
+    ans = bigp-1 + n-smolp;
+    if(smolp < bigp)
+        ans--;
+    cout << ans;*/
+
+
+
+
+}
